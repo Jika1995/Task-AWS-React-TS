@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from '@mui/material'
+import { Box, Button, Checkbox, FormControlLabel, TextField } from '@mui/material'
 import React, { FC } from 'react'
 
 const AddUser: FC = () => {
