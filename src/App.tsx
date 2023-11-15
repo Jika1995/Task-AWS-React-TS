@@ -14,7 +14,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/users/:id' element={<UserDetailPage />} />
+            <Route path='/users/details' element={<UserDetailPage />} />
+            {/* path='/users/:id' */}
+            {/* потом будет заимплементено */}
             <Route path='/users/add' element={<AddUserPage />} />
           </Routes>
         </div>
