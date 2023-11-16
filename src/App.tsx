@@ -10,16 +10,14 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <div>
+        <>
           <Navbar />
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/users/details' element={<UserDetailPage />} />
-            {/* path='/users/:id' */}
-            {/* потом будет заимплементено */}
+            <Route path='/users/:id' element={<UserDetailPage />} />
             <Route path='/users/add' element={<AddUserPage />} />
           </Routes>
-        </div>
+        </>
       </BrowserRouter>
     </QueryClientProvider>
 

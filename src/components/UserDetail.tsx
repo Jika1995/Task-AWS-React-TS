@@ -1,7 +1,6 @@
 import { Box, Typography } from '@mui/material'
-import React, { FC } from 'react'
 
-const UserDetail: FC = () => {
+const UserDetail = () => {
     return (
         <Box mt={3}>
             <Typography gutterBottom variant="h5" component="div">
