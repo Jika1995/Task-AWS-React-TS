@@ -1,10 +1,42 @@
 import { Box, Button, Checkbox, FormControlLabel, TextField } from '@mui/material'
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
+import { useNavigate } from 'react-router'
+import { useCreateUser } from '../services/addUser'
+import { User } from '../utils/types'
 
 const AddUser: FC = () => {
 
+    const [addUser] = useCreateUser()
+    const [user, setUser] = useState<Omit<User, 'id'>>({
+        name: '',
+        salary: 0,
+        feedback: '',
+        active: false
+    })
+    const navigate = useNavigate()
+
+    const handleInp = (e: React.ChangeEvent<any>) => {
+        if (e.target.name === 'salary') {
+            setUser((prevUser) => ({
+                ...prevUser,
+                salary: Number(e.target.value)
+            }));
+        } else if (e.target.name === 'active') {
+            setUser((prevUser) => ({
+                ...prevUser,
+                active: e.target.checked,
+            }));
+        } else {
+            setUser((prevUser) => ({
+                ...prevUser,
+                [e.target.name]: e.target.value
+            }));
+        }
+    }
+
     const handleSubmit = () => {
-        return null
+        addUser({ data: user })
+        navigate('/')
     }
 
     return (
@@ -16,6 +48,8 @@ const AddUser: FC = () => {
                 label="Name"
                 name="name"
                 autoFocus
+                onChange={handleInp}
+                value={user.name}
             />
             <TextField
                 margin="normal"
@@ -23,6 +57,9 @@ const AddUser: FC = () => {
                 name="salary"
                 label="Salary"
                 id="salary"
+                onChange={handleInp}
+                value={user.salary}
+
             />
             <TextField
                 margin="normal"
@@ -32,9 +69,18 @@ const AddUser: FC = () => {
                 id="feedback"
                 multiline
                 maxRows={4}
+                onChange={handleInp}
+                value={user.feedback}
+
             />
             <FormControlLabel
-                control={<Checkbox value="activity" color="primary" />}
+                control={<Checkbox
+                    checked={user.active}
+                    onChange={handleInp}
+                    color="primary"
+                    inputProps={{ 'aria-label': 'controlled' }}
+                    name="active"
+                />}
                 label="Activate/Deactivate"
             />
             <Button

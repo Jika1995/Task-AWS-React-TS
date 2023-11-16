@@ -1,14 +1,35 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Checkbox, FormControlLabel, Typography } from '@mui/material'
+import { useFetchUserById } from '../services/fetchUserById'
 
-const UserDetail = () => {
+type Props = {
+    id: string
+}
+const UserDetail = ({ id }: Props) => {
+
+    const [user] = useFetchUserById({ id }, { enabled: Boolean(id) })
+    if (!user) return null
+
     return (
         <Box mt={3}>
             <Typography gutterBottom variant="h5" component="div">
-                name
+                {user.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-                salary
+                {user.salary}
             </Typography>
+            <Typography variant="body2" color="text.secondary">
+                {user.feedback}
+            </Typography>
+            <FormControlLabel
+                control={<Checkbox
+                    checked={user.active}
+                    color="primary"
+                    inputProps={{ 'aria-label': 'controlled' }}
+                    name="active"
+                    disabled
+                />}
+                label={user.active ? 'active' : 'not active'}
+            />
         </Box>
     )
 }
