@@ -1,26 +1,37 @@
 import { Button, Card, CardActions, CardContent, Modal, Typography } from '@mui/material'
-import React, { FC } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom';
 import EditUserModal from '../modals/EditUserModal';
+import { useDeleteUser } from '../services/deleteUser';
+import { User } from '../utils/types';
 
-const UserItem: FC = () => {
+type Props = {
+    item: User
+}
+const UserItem = ({ item }: Props) => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const link = `users/${item.id}`
+    const [deleteUser] = useDeleteUser()
 
     return (
 
         <Card sx={{ maxWidth: 345 }}>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    name
+                    {item.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    salary
+                    {item.salary}
                 </Typography>
             </CardContent>
             <CardActions>
                 <Button size="small" onClick={handleOpen}>Edit</Button>
-                <Button size="small">Delete</Button>
+                <Button size="small" onClick={() => deleteUser({ id: item.id })}>Delete</Button>
+                <Link to={link}>
+                    <Button size="small">Details</Button>
+                </Link>
             </CardActions>
             <Modal
                 open={open}
@@ -28,7 +39,7 @@ const UserItem: FC = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <EditUserModal />
+                <EditUserModal item={item} />
             </Modal>
         </Card>
     )

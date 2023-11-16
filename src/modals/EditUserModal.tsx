@@ -1,6 +1,9 @@
 import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from '@mui/material'
-import { FC } from 'react'
+import { useState } from 'react'
 import { yellow } from '@mui/material/colors';
+import { User } from '../utils/types';
+import { useEditUser } from '../services/editUser';
+import { useNavigate } from 'react-router';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -15,11 +18,43 @@ const style = {
     p: 4,
 };
 
-const EditUserModal: FC = () => {
+type Props = {
+    item: User
+};
+
+const EditUserModal = ({ item }: Props) => {
+
+    const [user, setUser] = useState(item);
+    const [editUser] = useEditUser();
+    const navigate = useNavigate()
 
     const handleSubmit = () => {
-        return null
+        editUser({
+            id: user.id,
+            data: user
+        })
+        navigate('/')
+    };
+
+    const handleInp = (e: React.ChangeEvent<any>) => {
+        if (e.target.name === 'salary') {
+            setUser((prevUser) => ({
+                ...prevUser,
+                salary: Number(e.target.value)
+            }));
+        } else if (e.target.name === 'active') {
+            setUser((prevUser) => ({
+                ...prevUser,
+                active: e.target.checked,
+            }));
+        } else {
+            setUser((prevUser) => ({
+                ...prevUser,
+                [e.target.name]: e.target.value
+            }));
+        }
     }
+
     return (
         <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2" align='center'>
@@ -33,6 +68,8 @@ const EditUserModal: FC = () => {
                     label="Name"
                     name="name"
                     autoFocus
+                    value={user.name}
+                    onChange={handleInp}
                 />
                 <TextField
                     margin="normal"
@@ -40,6 +77,8 @@ const EditUserModal: FC = () => {
                     name="salary"
                     label="Salary"
                     id="salary"
+                    value={user.salary}
+                    onChange={handleInp}
                 />
                 <TextField
                     margin="normal"
@@ -49,9 +88,17 @@ const EditUserModal: FC = () => {
                     id="feedback"
                     multiline
                     maxRows={4}
+                    value={user.feedback}
+                    onChange={handleInp}
                 />
                 <FormControlLabel
-                    control={<Checkbox value="activity" color="primary" />}
+                    control={<Checkbox
+                        checked={user.active}
+                        onChange={handleInp}
+                        color="primary"
+                        inputProps={{ 'aria-label': 'controlled' }}
+                        name="active"
+                    />}
                     label="Activate/Deactivate"
                 />
                 <Button
