@@ -2,8 +2,8 @@
   "users": [
     {
       "id": "1",
-      "name": "Jack",
-      "salary": 500,
+      "name": "Jack Test UPda",
+      "salary": "500",
       "active": true,
       "feedback": "The customer service at this car dealership was exceptional - the staff was knowledgeable and made the buying process smooth."
     },
@@ -76,13 +76,6 @@
       "salary": 700,
       "active": true,
       "feedback": "The customer service at this dealership was excellent. They were patient in helping me find the perfect car and offered a competitive deal."
-    },
-    {
-      "id": "12",
-      "name": "Dan",
-      "salary": 1500,
-      "active": true,
-      "feedback": "I was impressed with the car dealership's customer service. They provided a smooth and efficient buying experience, and their staff was knowledgeable and friendly."
     }
   ]
 }

@@ -39,7 +39,7 @@ const UserItem = ({ item }: Props) => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <EditUserModal item={item} />
+                <EditUserModal item={item} handleClose={handleClose} />
             </Modal>
         </Card>
     )
