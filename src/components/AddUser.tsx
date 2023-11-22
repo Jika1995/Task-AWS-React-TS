@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router'
 import { useCreateUser } from '../services/addUser'
 
 type FormValues = {
+    id: string;
     name: string;
     salary: number;
     feedback: string;
@@ -24,6 +25,21 @@ const AddUser = () => {
     return (
         <form onSubmit={onSubmit}>
             <Box component='div' sx={{ mt: 1 }}>
+                <TextField
+                    margin="normal"
+                    fullWidth
+                    label="Id"
+                    autoFocus
+                    required
+                    {...register("id", {
+                        minLength: {
+                            value: 1,
+                            message: 'Name should be at least 1 character1'
+                        },
+                        required: true
+                    })}
+                />
+                {errors.id && <p>{errors.id.message}</p>}
                 <TextField
                     margin="normal"
                     fullWidth

@@ -615,13 +615,13 @@
               "version": "2.110.0"
             }
           },
-          "CloudFrontInvalidation-1700640888045": {
-            "id": "CloudFrontInvalidation-1700640888045",
-            "path": "UsersApp/CloudFrontInvalidation-1700640888045",
+          "CloudFrontInvalidation-1700643950221": {
+            "id": "CloudFrontInvalidation-1700643950221",
+            "path": "UsersApp/CloudFrontInvalidation-1700643950221",
             "children": {
               "Provider": {
                 "id": "Provider",
-                "path": "UsersApp/CloudFrontInvalidation-1700640888045/Provider",
+                "path": "UsersApp/CloudFrontInvalidation-1700643950221/Provider",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_lambda.SingletonFunction",
                   "version": "2.110.0"
@@ -629,11 +629,11 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "UsersApp/CloudFrontInvalidation-1700640888045/Resource",
+                "path": "UsersApp/CloudFrontInvalidation-1700643950221/Resource",
                 "children": {
                   "Default": {
                     "id": "Default",
-                    "path": "UsersApp/CloudFrontInvalidation-1700640888045/Resource/Default",
+                    "path": "UsersApp/CloudFrontInvalidation-1700643950221/Resource/Default",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnResource",
                       "version": "2.110.0"
@@ -647,11 +647,11 @@
               },
               "CustomResourcePolicy": {
                 "id": "CustomResourcePolicy",
-                "path": "UsersApp/CloudFrontInvalidation-1700640888045/CustomResourcePolicy",
+                "path": "UsersApp/CloudFrontInvalidation-1700643950221/CustomResourcePolicy",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "UsersApp/CloudFrontInvalidation-1700640888045/CustomResourcePolicy/Resource",
+                    "path": "UsersApp/CloudFrontInvalidation-1700643950221/CustomResourcePolicy/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                       "aws:cdk:cloudformation:props": {
@@ -665,7 +665,7 @@
                           ],
                           "Version": "2012-10-17"
                         },
-                        "policyName": "CloudFrontInvalidation1700640888045CustomResourcePolicyF2301F79",
+                        "policyName": "CloudFrontInvalidation1700643950221CustomResourcePolicy53C4DB45",
                         "roles": [
                           {
                             "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"

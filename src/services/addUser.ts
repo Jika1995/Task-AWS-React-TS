@@ -3,7 +3,8 @@ import { type User } from "../utils/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export type CreateUserArg = {
-    data: Omit<User, 'id'>
+    // data: Omit<User, 'id'>
+    data: User
 }
 
 export const createUser = async (arg: CreateUserArg) => {

@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const baseAxios = axios.create({
-    baseURL: 'http://localhost:8000',
+    baseURL: 'https://71vai2lw9l.execute-api.us-east-1.amazonaws.com',
 });
