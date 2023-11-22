@@ -31,6 +31,7 @@ const EditUserModal = ({ item, handleClose }: Props) => {
         formState: { errors }
     } = useForm({
         defaultValues: {
+            id: item.id,
             name: item.name,
             salary: item.salary,
             feedback: item.feedback,
@@ -39,7 +40,6 @@ const EditUserModal = ({ item, handleClose }: Props) => {
     })
 
     const [editUser] = useEditUser();
-    const navigate = useNavigate()
 
     const onSubmit = handleSubmit((data) => {
         editUser({

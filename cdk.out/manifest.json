@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1/58119a438e0871a0c5bf34f7ef3493a349e4a120028971e75c70ecddfada02c9.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1/f25b40e01e0e3f2761f3fe0e833749cbd151e2a2c4b1f0794b9320ec77609846.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -94,7 +94,7 @@
             "data": "DomainURL"
           }
         ],
-        "/UsersApp/CloudFrontInvalidation-1700643950221": [
+        "/UsersApp/CloudFrontInvalidation-1700656311402": [
           {
             "type": "aws:cdk:warning",
             "data": "installLatestAwsSdk was not specified, and defaults to true. You probably do not want this. Set the global context flag '@aws-cdk/customresources:installLatestAwsSdkDefault' to false to switch this behavior off project-wide, or set the property explicitly to true if you know you need to call APIs that are not in Lambda's built-in SDK version. [ack: @aws-cdk/custom-resources:installLatestAwsSdkNotSpecified]",
@@ -123,16 +123,16 @@
             ]
           }
         ],
-        "/UsersApp/CloudFrontInvalidation-1700643950221/Resource/Default": [
+        "/UsersApp/CloudFrontInvalidation-1700656311402/Resource/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "CloudFrontInvalidation1700643950221311D5B6F"
+            "data": "CloudFrontInvalidation1700656311402110DB177"
           }
         ],
-        "/UsersApp/CloudFrontInvalidation-1700643950221/CustomResourcePolicy/Resource": [
+        "/UsersApp/CloudFrontInvalidation-1700656311402/CustomResourcePolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "CloudFrontInvalidation1700643950221CustomResourcePolicy53C4DB45"
+            "data": "CloudFrontInvalidation1700656311402CustomResourcePolicy275E324C"
           }
         ],
         "/UsersApp/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource": [

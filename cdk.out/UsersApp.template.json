@@ -196,7 +196,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "977e21bda044229573445d565905339bd217cd8544053293ee719502287b4e48.zip"
+     "1203f2fa17e709d32e4d662277e416ad360c78bc198d34e9aa61250b138a61ab.zip"
     ],
     "DestinationBucketName": {
      "Ref": "UsersAppBucketE87A1DB3"
@@ -394,7 +394,7 @@
     "aws:asset:property": "Code"
    }
   },
-  "CloudFrontInvalidation1700643950221311D5B6F": {
+  "CloudFrontInvalidation1700656311402110DB177": {
    "Type": "Custom::AWS",
    "Properties": {
     "ServiceToken": {
@@ -403,20 +403,20 @@
       "Arn"
      ]
     },
-    "Create": "{\"physicalResourceId\":{\"id\":\"E3UIM8B5IZXUZE-1700643950221\"},\"service\":\"CloudFront\",\"action\":\"createInvalidation\",\"parameters\":{\"DistributionId\":\"E3UIM8B5IZXUZE\",\"InvalidationBatch\":{\"CallerReference\":\"1700643950222\",\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]}}}}",
+    "Create": "{\"physicalResourceId\":{\"id\":\"E3UIM8B5IZXUZE-1700656311402\"},\"service\":\"CloudFront\",\"action\":\"createInvalidation\",\"parameters\":{\"DistributionId\":\"E3UIM8B5IZXUZE\",\"InvalidationBatch\":{\"CallerReference\":\"1700656311402\",\"Paths\":{\"Quantity\":1,\"Items\":[\"/*\"]}}}}",
     "InstallLatestAwsSdk": true
    },
    "DependsOn": [
-    "CloudFrontInvalidation1700643950221CustomResourcePolicy53C4DB45",
+    "CloudFrontInvalidation1700656311402CustomResourcePolicy275E324C",
     "UsersAppDistributionCFF12269"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "UsersApp/CloudFrontInvalidation-1700643950221/Resource/Default"
+    "aws:cdk:path": "UsersApp/CloudFrontInvalidation-1700656311402/Resource/Default"
    }
   },
-  "CloudFrontInvalidation1700643950221CustomResourcePolicy53C4DB45": {
+  "CloudFrontInvalidation1700656311402CustomResourcePolicy275E324C": {
    "Type": "AWS::IAM::Policy",
    "Properties": {
     "PolicyDocument": {
@@ -429,7 +429,7 @@
      ],
      "Version": "2012-10-17"
     },
-    "PolicyName": "CloudFrontInvalidation1700643950221CustomResourcePolicy53C4DB45",
+    "PolicyName": "CloudFrontInvalidation1700656311402CustomResourcePolicy275E324C",
     "Roles": [
      {
       "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
@@ -440,7 +440,7 @@
     "UsersAppDistributionCFF12269"
    ],
    "Metadata": {
-    "aws:cdk:path": "UsersApp/CloudFrontInvalidation-1700643950221/CustomResourcePolicy/Resource"
+    "aws:cdk:path": "UsersApp/CloudFrontInvalidation-1700656311402/CustomResourcePolicy/Resource"
    }
   },
   "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
