@@ -1,9 +1,17 @@
-import React, { FC } from 'react'
+import { Container, Typography } from '@mui/material'
+import { useParams } from 'react-router';
 import UserDetail from '../components/UserDetail'
 
-const UserDetailPage: FC = () => {
+const UserDetailPage = () => {
+
+    const { id } = useParams();
+    if (!id) return null
+
     return (
-        <UserDetail />
+        <Container maxWidth="sm">
+            <Typography align='center' variant='h4' mt={3}>Users Detail</Typography>
+            <UserDetail id={id} />
+        </Container>
     )
 }
 
